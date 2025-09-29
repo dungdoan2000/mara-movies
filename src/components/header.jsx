@@ -1,6 +1,19 @@
 const Header = () => {
     return (
-        <div>Header</div>
+        <div className="p-4 bg-black text-white flex flex-items-center justify-between">
+            <div className="flex items-center space-x-4">
+                <h1 className="text-[30px] uppercase text-red-700 font-bold">Movie</h1>
+                <nav className="flex items-center space-x-4">
+                    <a href="#" className="text-white">Home</a>
+                    <a href="#" className="text-white">About</a>
+                    <a href="#" className="text-white">Contact</a>
+                </nav>
+            </div>
+            <div className="flex items-center space-x-4">
+                <input type="text" placeholder="Search moive..." className="p-3 text-black bg-white"/>
+                <button className="p-2 text-white bg-red-600">Search</button>
+            </div>
+        </div>
     )
 }
 
