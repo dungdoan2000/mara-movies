@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-import Header from './components/Header';
 import Banner from './components/Banner';
+import Header from './components/Header';
 import MovieList from './components/MovieList';
 import MovieSearch from './components/MoiveSearch';
-import { MovieProvider } from './context/MovieProvider';
 
 function App() {
   const [movie, setMovie] = useState([]);
