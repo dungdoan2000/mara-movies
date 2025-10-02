@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 import Modal from 'react-modal';
 import Youtube from 'react-youtube';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
 const opts = {
     height: '390',
@@ -14,27 +12,7 @@ const opts = {
     }
 }
 
-const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 10
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 8
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 3
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
-    }
-};
-
-const MovieList = ({ title, data }) => {
+const MovieSearch = ({ title, data }) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [trailer, setTrailer] = useState('');
 
@@ -58,19 +36,23 @@ const MovieList = ({ title, data }) => {
             setModalIsOpen(false);
             console.log('error', error);
         }
-    }
+    };
 
     return (
         <div className='text-white p-10 mb-10'>
             <h2 className='uppercase text-xl font-bold mb-4'>
                 {title}
             </h2>
-            <Carousel responsive={responsive} className='flex items-center space-x-4'>
+            <div className="grid grid-cols-2
+                sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 {data && data.length > 0 && data.map((item) => (
-                    <div key={item.id}
-                        className='w-[200px] h-[300px] relative movie-card pr-4 cursor-pointer group overflow-hidden' onClick={() => {
+                    <div
+                        key={item.id}
+                        className='w-[200px] h-[300px] relative movie-card pr-4 cursor-pointer group overflow-hidden'
+                        onClick={() => {
                             handleTrailer(item.id)
-                        }}>
+                        }}
+                    >
                         <img
                             src={`${import.meta.env.VITE_IMG_URL}${item.poster_path}`}
                             alt="img"
@@ -79,11 +61,13 @@ const MovieList = ({ title, data }) => {
                             ease-in-out'
                         />
                         <div className='absolute bottom-0 p-3 bg-black/67 w-full flex justify-center'>
-                            <p className='text-md font-bold'>{item.title || item.orignal_title}</p>
+                            <p className='text-md font-bold'>
+                                {item.title || item.orignal_title}
+                            </p>
                         </div>
                     </div>
                 ))}
-            </Carousel>
+            </div>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
@@ -108,4 +92,4 @@ const MovieList = ({ title, data }) => {
     )
 }
 
-export default MovieList;
+export default MovieSearch;

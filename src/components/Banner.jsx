@@ -22,7 +22,7 @@ const Banner = () => {
                             <img src={IconRating} alt="rating" className='w-8 h-8' />
                             <img src={IconRatingHalf} alt="rating" className='w-8 h-8' />
                         </div>
-                        <p className='text-white'>
+                        <p className='text-white line-clamp-5'>
                             Sau bảy năm xa nhà, Nguyễn Lưu Tranh trở lại thành phố nơi cô lớn lên và trở thành bác sĩ bồi dưỡng nghiệp vụ tại khoa Ngoại Thần kinh của bệnh viện Bắc Nhã. Để có thể ở lại Bắc Nhã, Nguyễn Lưu Tranh đã dồn hết sức mình vào công việc. Có điều chồng cũ của cô - Ninh Chí Khiêm là bác sĩ khoa Ngoại Thần kinh giỏi nhất ở Bắc Nhã, anh ấy đã chủ động làm thầy hướng dẫn cho Nguyễn Lưu Tranh và truyền thụ mọi thứ có thể cho cô chỉ để bù đắp cho những tổn thương từ cuộc hôn nhân thất bại mà anh gây ra. Thế nhưng Nguyễn Lưu Tranh đã không còn là cô gái yếu đuối nhút nhát năm nào, dù là chữa bệnh cứu người hay đối diện với vấn đề tình cảm, cô đều có thể gánh vác và giữ vững sự kiên định của mình. Trong công việc, họ tranh cãi, giảng hòa và sát cánh bên nhau, sợi tơ hồng vận mệnh liên kết giữa họ chưa bao giờ bị cắt đứt. Hưởng ứng lời kêu gọi của Tổ quốc, họ đã tham gia đội y tế tình nguyện châu Phi. Trong quá trình cấp cứu bệnh nhân, Ninh Chí Khiêm bị đạn lạc bắn trọng thương, Nguyễn Lưu Tranh đã kiên trì cứu anh từ cõi chết trở về. Sau khi trải qua thử thách sinh tử, họ đã hiểu rõ hơn về cuộc sống và sinh mệnh, từ đó bắt đầu một mối quan hệ mới.
                         </p>
                         <div className='flex items-center space-x-4'>

@@ -1,4 +1,8 @@
-const Header = () => {
+import { useState } from 'react';
+
+const Header = ({ onSearch }) => {
+    const [textSearch, setTextSearch] = useState('');
+    
     return (
         <div className="p-4 bg-black text-white flex flex-items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -10,8 +14,11 @@ const Header = () => {
                 </nav>
             </div>
             <div className="flex items-center space-x-4">
-                <input type="text" placeholder="Search moive..." className="p-3 text-black bg-white"/>
-                <button className="p-2 text-white bg-red-600">Search</button>
+                <input type="text" placeholder="Search moive..." className="p-2 text-black bg-white" onChange={(e) => {
+                    setTextSearch(e.target.value)
+                }} value={textSearch} />
+                <button className="p-2 text-white bg-red-600"
+                    onClick={() => onSearch(textSearch)}>Search</button>
             </div>
         </div>
     )
